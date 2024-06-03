@@ -3,7 +3,7 @@
     
     
     
-    <wb-module deploy-name="Web_Nong_San">
+    <wb-module deploy-name="FootFlower Shop">
                                         
         
         
@@ -19,12 +19,12 @@
         
         
         
-        <property name="context-root" value="Web_Nong_San"/>
+        <property name="context-root" value="FootFlower Shop"/>
                                         
         
         
         
-        <property name="java-output-path" value="/Web_Nong_San/build/classes"/>
+        <property name="java-output-path" value="/FootFlower Shop/build/classes"/>
                                     
     
     
