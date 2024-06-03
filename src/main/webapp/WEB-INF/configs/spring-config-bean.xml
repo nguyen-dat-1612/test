@@ -16,7 +16,7 @@
 		<property name="slider2Img" value="assets/img/slide_2.jpg" />
 		<property name="logoFooterImg"
 			value="assets/img/logo_hong.png" />
-		<property name="banner1" value="assets/img/banner_1.png" />
+		<property name="banner1" value="assets/img/banner_1.jpg" />
 		<property name="banner2" value="assets/img/banner_2.jpg" />
 		<property name="phoneNumber" value="0363345492" />
 		<property name="gmail"
