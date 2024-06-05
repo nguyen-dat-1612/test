@@ -89,11 +89,11 @@
 							<table class="table text-nowrap">
 								<thead class="table-success">
 									<tr>
-										<th><s:message code="wishlist.photo" /></th>
-										<th><s:message code="wishlist.des" /></th>
-										<th><s:message code="wishlist.price" /></th>
-										<th><s:message code="wishlist.action" /></th>
-										<th><s:message code="wishlist.remove" /></th>
+										<th style = "background-color: #ffd3ed"><s:message code="wishlist.photo" /></th>
+										<th style = "background-color: #ffd3ed"><s:message code="wishlist.des" /></th>
+										<th style = "background-color: #ffd3ed"><s:message code="wishlist.price" /></th>
+										<th style = "background-color: #ffd3ed"><s:message code="wishlist.action" /></th>
+										<th style = "background-color: #ffd3ed"><s:message code="wishlist.remove" /></th>
 									</tr>
 								</thead>
 								<c:forEach var="c" items="${wishlists }">

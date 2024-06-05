@@ -58,7 +58,7 @@
 			<div class="col-12 ">
 				<div class="mb-4 ">
 					<div class="d-flex">
-						<div class="fw-bold text-success">
+						<div style = "color: #FD6C9C !important" class="fw-bold text-success">
 							<i class="bi bi-geo-alt-fill"></i> Địa chỉ nhận hàng
 						</div>
 
@@ -92,13 +92,13 @@
 						<table class="table text-nowrap">
 							<thead class="table-success">
 								<tr>
-									<th><s:message code="cart.name" /></th>
-									<th><s:message code="cart.des" /></th>
-									<th><s:message code="cart.price" /></th>
-									<th><s:message code="cart.amount" /></th>
-									<th><s:message code="cart.total" /></th>
-									<th><s:message code="cart.status" /></th>
-									<th><s:message code="cart.remove" /></th>
+									<th style = "background-color: #ffd3ed"><s:message code="cart.name" /></th>
+									<th style = "background-color: #ffd3ed"><s:message code="cart.des" /></th>
+									<th style = "background-color: #ffd3ed"><s:message code="cart.price" /></th>
+									<th style = "background-color: #ffd3ed"><s:message code="cart.amount" /></th>
+									<th style = "background-color: #ffd3ed"><s:message code="cart.total" /></th>
+									<th style = "background-color: #ffd3ed"><s:message code="cart.status" /></th>
+									<th style = "background-color: #ffd3ed"><s:message code="cart.remove" /></th>
 								</tr>
 							</thead>
 							<c:forEach var="c" items="${carts }">
@@ -120,10 +120,12 @@
 											<div class="d-flex align-items-center">
 												<div class="text">
 													<h5 class="fs-6 mb-0">
-														<a
+														<a 
 															href="product/detail.htm?productId=${c.product.productId }"
-															class="text-inherit link-success
-																">${c.product.productName }</a>
+															class="text-inherit link-success"
+															style = "color: #FD6C9C; 
+															text-decoration: none;">
+																${c.product.productName }</a>
 													</h5>
 													<small class="text-muted text-wrap">${c.product.unit }</small>
 												</div>
@@ -166,11 +168,11 @@
 
 										<td class="align-middle"><c:if
 												test="${(c.product.quantity == 0) }">
-												<span class="badge bg-danger"> <s:message
+												<span class="badge bg-danger" style = "background-color: #FD6C9C !important"> <s:message
 														code="cart.out_of_item" />
 												</span>
 											</c:if> <c:if test="${(c.product.quantity > 0) }">
-												<span class="badge bg-success"> <s:message
+												<span class="badge bg-success"  style = "background-color: #FD6C9C !important" > <s:message
 														code="cart.stocking" />
 												</span>
 											</c:if></td>

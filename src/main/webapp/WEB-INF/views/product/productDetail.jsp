@@ -16,7 +16,7 @@
 				<div class="ps-lg-10 mt-6 mt-md-0">
 
 					<!-- heading -->
-					<h1 class="mb-1 text-success">${product.productName}</h1>
+					<h1 style = "color:#FD6C9C !important" class="mb-1 text-success" >${product.productName}</h1>
 					<div class="mb-4">
 						<!-- rating -->
 						<c:forEach begin="1" end="5" varStatus="index">
@@ -29,7 +29,7 @@
 								</c:otherwise>
 							</c:choose>
 						</c:forEach>
-						<span class="ms-2 text-success">(${feedbacks.size()}
+						<span style = "color:#FD6C9C !important" class="ms-2 text-success">(${feedbacks.size()}
 							reviews)</span>
 					</div>
 					<div class="fs-4">
@@ -67,7 +67,7 @@
 					<div class="col-xxl-4 col-lg-4 col-md-5 col-5 d-grid">
 						<!-- button -->
 						<!-- btn -->
-						<a href="product/addToCart.htm?productId=${product.productId }"
+						<a style = "background-color:#FD6C9C !important; border-color:#FD6C9C" href="product/addToCart.htm?productId=${product.productId }"
 							class="btn btn-success btn-lg  ${(product.quantity == 0) ? 'disabled' : '' }">
 							<c:if test="${(product.quantity == 0) }">
 								<s:message code="wishlist.out_of_item" />

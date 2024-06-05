@@ -18,7 +18,7 @@
 			<div class="d-flex align-items-center">
 				<div class="text">
 					<h5 class="fs-6 mb-0">
-						<a href="product/detail.htm?productId=${c.product.productId }"
+						<a style = "color:#FD6C9C !important ;text-decoration: none;" href="product/detail.htm?productId=${c.product.productId }"
 							class="text-inherit link-success
 																">${c.product.productName }</a>
 					</h5>
@@ -43,7 +43,7 @@
 						maxFractionDigits="0" />
 				</span>
 			</c:if></td>
-		<td class="align-middle"><a
+		<td class="align-middle"><a style = "background-color:#FD6C9C !important; border-color:#FD6C9C !important"
 			href='<c:url value = "product/addToCart.htm?productId=${c.product.productId}"/>'
 			type="button"
 			class="btn btn-success  btn-sm ${(c.product.quantity == 0) ? 'disabled' : '' }">
