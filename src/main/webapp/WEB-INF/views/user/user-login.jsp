@@ -16,20 +16,19 @@
 	transform: translateY(-50%);
 }
 
+
 input[type='checkbox']:checked {
-	background-color: green;
+    background-color: #FD6C9C;
+}
+.my-5 {
+	    margin-top: 6.9rem !important;
+	    margin-bottom: 6.9rem !important;
 }
 </style>
+	
 
 <body>
-	<nav class="navbar shadow-sm p-3 mb-5 bg-body ">
-		<div class="container-fluid">
-			<a class="navbar-brand "
-				href='<c:url value = "index.htm?language=${pageContext.response.locale}"/>'>
-				<img src="assets/img/logo.png" alt="Logo">
-			</a>
-		</div>
-	</nav>
+	<%@include file="/WEB-INF/views/include/header.jsp"%>
 
 	<section class="my-lg-14 my-5">
 		<div class="container">
@@ -108,15 +107,15 @@ input[type='checkbox']:checked {
 			<div class="row justify-content-center align-items-center">
 				<div class="col-12 col-md-6 col-lg-4 order-lg-1 order-2">
 					<!-- img -->
-					<img src="assets/img/signin-g.svg" alt="" class="img-fluid">
+					<img src="assets/img/img_login.png" alt="" class="img-fluid">
 				</div>
 				<!-- col -->
 				<div class="col-12 col-md-6 offset-lg-1 col-lg-4 order-lg-2 order-1">
 					<div class="mb-lg-9 mb-3">
 						<h1 class="mb-1 h2 fw-bold">
-							Sign in to <span class="text-success">Tad Garden </span>
+							Sign in to <span class="text-success" style="color:#FD6C9C !important">Foot Flower </span>
 						</h1>
-						<p>Welcome back to Tad Garden! Enter your email to get
+						<p>Welcome back to Foot Flower! Enter your email to get
 							started.</p>
 					</div>
 
@@ -157,13 +156,13 @@ input[type='checkbox']:checked {
 							<!-- btn -->
 							<div class="col-12 d-grid">
 								<button name="guest-login"
-									class="btn btn-success btn-block  mb-3" type="submit">Log
+									class="btn btn-success btn-block  mb-3" type="submit"  style="background-color:#FD6C9C !important; border-color: #FD6C9C !important">Log
 									in</button>
 							</div>
 							<!-- link -->
 							<div>
 								Do not have an account? <a href="guest/guest-register.htm"
-									class="link-success ">Create new</a>
+									class="link-success "  style="color:#FD6C9C !important; text-decoration-color: #FD6C9C;">Create new</a>
 							</div>
 						</div>
 					</form:form>

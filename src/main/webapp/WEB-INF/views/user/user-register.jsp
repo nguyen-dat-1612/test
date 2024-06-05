@@ -13,10 +13,15 @@
 	top: 50%;
 	transform: translateY(-50%);
 }
+
+.my-8 {
+	    margin-top: 6.9rem !important;
+	    margin-bottom: 6.9rem !important;
+}
 </style>
 
 <body>
-
+	<%@include file="/WEB-INF/views/include/header.jsp"%>
 	<c:choose>
 		<c:when test="${alert == 1}">
 			<div class="position-fixed bottom-0 end-0 p-3">
@@ -43,15 +48,6 @@
 		
 	</c:choose>
 
-	<nav class="navbar shadow-sm p-3 mb-5 bg-body ">
-		<div class="container-fluid">
-			<a class="navbar-brand "
-				href='<c:url value = "index.htm?language=${pageContext.response.locale}"/>'>
-				<img src="assets/img/logo.jpg" alt="Logo">
-			</a>
-		</div>
-	</nav>
-
 	<section class="my-lg-14 my-8">
 		<!-- container -->
 		<div class="container">
@@ -59,14 +55,14 @@
 			<div class="row justify-content-center align-items-center">
 				<div class="col-12 col-md-6 col-lg-4 order-lg-1 order-2">
 					<!-- img -->
-					<img src="assets/img/signup-g.svg" alt="" class="img-fluid">
+					<img src="assets/img/img_login.png" alt="" class="img-fluid">
 				</div>
 				<!-- col -->
 				<div class="col-12 col-md-6 offset-lg-1 col-lg-4 order-lg-2 order-1">
 					<div class="mb-lg-9 mb-5">
 						<h1 class="mb-1 h2 fw-bold">Sign up</h1>
 						<p>
-							Welcome to <span class="text-warning">Foot Flower!</span> Enter
+							Welcome to <span class="text-warning" style="color:#FD6C9C !important;">Foot Flower!</span> Enter
 							your email to get started.
 						</p>
 					</div>
@@ -115,14 +111,14 @@
 							</div>
 							<!-- btn -->
 							<div class="col-12 d-grid">
-								<button name="update" type="submit" class="btn btn-success">Register</button>
+								<button name="update" type="submit" class="btn btn-success"  style="background-color:#FD6C9C !important; border-color:#FD6C9C !important">Register</button>
 							</div>
 
 							<!-- text -->
 							<p>
 								<small>By continuing, you agree to our <a
-									class="link-success" href="#!"> Terms of Service</a> &amp; <a
-									class="link-success" href="#!">Privacy Policy</a></small>
+									class="link-success" href="#!" style="color:#FD6C9C !important; text-decoration-color: #FD6C9C;'"> Terms of Service</a> &amp; <a
+									class="link-success" href="#!" style="color:#FD6C9C !important; text-decoration-color: #FD6C9C;" >Privacy Policy</a></small>
 							</p>
 						</div>
 					</form:form>
