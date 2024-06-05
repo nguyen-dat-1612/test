@@ -41,19 +41,7 @@
 					</p>
 				</div>
 			</div>
-			<div class="col-md-6 col-lg-3">
-				<div class="mb-8 mb-xl-0">
-					<div class="mb-6 pb-3">
-						<img src="assets/img/icons/refresh-cw.svg" alt="">
-					</div>
-					<h3 class="h5 mb-3">
-						<s:message code="global.choose4.title" />
-					</h3>
-					<p>
-						<s:message code="global.choose4.des" />
-					</p>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 
