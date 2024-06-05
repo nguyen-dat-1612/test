@@ -41,9 +41,7 @@
 							<div class="card bg-light border-0 rounded-4"
 								style="background-image: url(assets/img/slide_3.jpg); background-repeat: no-repeat; background-size: cover; background-position: right;">
 								<div class="card-body p-lg-12 p-5">
-									<h1>Welcome back! FreshCart</h1>
-									<p>FreshCart is simple &amp; clean design for developer and
-										designer.</p>
+									<h1>Welcome back! FootFlower</h1>
 									<a href="#" class="btn btn-success"> Create Product </a>
 								</div>
 							</div>

@@ -58,9 +58,9 @@
 										<h4>Reviews</h4>
 									</div>
 
-									<div class="dropdown">
+									<div class="dropdown" >
 										<button class="btn btn-success dropdown-toggle" type="button"
-											data-bs-toggle="dropdown" aria-expanded="false">
+											data-bs-toggle="dropdown" aria-expanded="false" style = "background-color:#FD6C9C !important; border-color:#FD6C9C !important">
 											<c:choose>
 												<c:when test="${filterStar==0}">
 													<s:message code="product.filter_0" />
@@ -186,7 +186,7 @@
 								</a></li>
 								<c:forEach var="i" begin="1" end="${totalPage }" varStatus="in">
 
-									<li class="page-item "><a
+									<li class="page-item "><a style = "background-color:#FD6C9C !important; border-color:#FD6C9C" 
 										class="page-link  mx-1 ${(currentPage == in.count) ? 'active' : '' }"
 										href="product/detail.htm?productId=${currentProductId}&currentPage=${in.count  }&filterStar=${filterStar }">${in.count}</a></li>
 								</c:forEach>
