@@ -14,7 +14,7 @@
 
 			<div class="col-6 text-end d-none d-md-block">
 				<div class="dropdown ">
-					<button class="btn btn-sm dropdown-toggle border-0 me-2"
+					<button class="btn btn-sm dropdown-toggle border-0 me-2 btn-language-bar"
 						type="button" data-bs-toggle="dropdown" aria-expanded="false">
 						<c:if test="${localeCode == 'vi'}">
 							<i class="flag-icon flag-icon-vn "></i> VN

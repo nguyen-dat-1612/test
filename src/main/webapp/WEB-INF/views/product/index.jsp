@@ -122,7 +122,15 @@
 
 							<!-- select option -->
 							<div class="dropdown">
-								<button class="btn btn-success dropdown-toggle" type="button"
+								<button class="btn btn-success dropdown-toggle btn-select-option" style="
+								.btn-select-option {
+							    background-color: #FD6C9C;
+							    border-color: #FD6C9C;
+							}
+							
+							.btn-select-option:hover {
+							    background-color: black;
+							}" type="button"
 									data-bs-toggle="dropdown" aria-expanded="false">
 									<c:choose>
 										<c:when test="${index==0}">

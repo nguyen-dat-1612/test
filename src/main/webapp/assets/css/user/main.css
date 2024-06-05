@@ -3,12 +3,12 @@
 	--grayColor: #f0f3f2;
 	--fontColor: #5c6c75;
 	--primaryColor: #0aad0a;
-	--iconColor: #198754;
+	--iconColor: #FD6C9C;
 	--onClick: #556166;
 	--textColor: #607179;
 	--footerColor: #FFD3ED;
 	--catagoryColor: #21313C;
-	--iconColor1: #0aad0a;
+	--iconColor1: #FE89B0;
 }
 
 :root {
@@ -185,4 +185,21 @@ footer {
 
 .nav-item a:hover {
 	color: var(--iconColor1);
+}
+
+.btn-select-option {
+    background-color: #FD6C9C;
+    border-color: #FD6C9C;
+}
+
+.btn-select-option:hover {
+    background-color: black;
+}
+.btn-dark {
+	background-color: #FD6C9C !important;
+    border-color: #FD6C9C  !important;
+}
+.btn-dark:hover {
+	background-color: black !important;
+    border-color: black  !important;
 }
