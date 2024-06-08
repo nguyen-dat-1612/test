@@ -5,6 +5,11 @@
 .hidden {
 	display: none !important;
 }
+
+.table-success th {
+	background-color: #ffd3ed;
+}
+
 </style>
 <body>
 	<c:choose>
@@ -56,7 +61,7 @@
 										<ol class="breadcrumb mb-0 text-muted fs-6 fw-semibold">
 											<li class="breadcrumb-item  "><a
 												href="employee/products.htm"
-												class="text-decoration-none text-success ">Product </a></li>
+												class="text-decoration-none text-success " >Product </a></li>
 
 										</ol>
 
@@ -65,7 +70,7 @@
 								<!-- button -->
 								<div>
 									<a type="button" href="employee/products/create-product.htm"
-										class="btn btn-success">Add Products</a>
+										class="btn btn-success" style="background-color: #ffd3ed; color: black;">Add Products</a>
 								</div>
 							</div>
 						</div>

@@ -5,6 +5,9 @@
 .hidden {
 	display: none !important;
 }
+.table-success th {
+	background-color: #ffd3ed;
+}
 </style>
 <body>
 
@@ -40,7 +43,7 @@
 								<!-- button -->
 								<div>
 									<a class="btn btn-success"
-										href="employee/vouchers/create-coupon.htm">Add Voucher</a>
+										href="employee/vouchers/create-coupon.htm" style="background-color: #ffd3ed; color: black;">Add Voucher</a>
 								</div>
 							</div>
 						</div>
