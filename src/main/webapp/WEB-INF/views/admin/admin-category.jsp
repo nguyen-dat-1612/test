@@ -1,6 +1,7 @@
 <%@include file="/WEB-INF/views/include/library.jsp"%>
 
 <body>
+	<!-- admin-category.jsp - Danh sách loại hoa -->
 	<c:choose>
 		<c:when test="${alert == 1}">
 			<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
@@ -47,7 +48,7 @@
 									<!-- breacrumb -->
 									<nav aria-label="breadcrumb">
 										<ol class="breadcrumb mb-0 text-muted fs-6 fw-semibold">
-											<li class="breadcrumb-item  "><a
+											<li class="breadcrumb-item  "><a  style ="color:#FD6C9C !important"
 												href="admin/user/dashboard.htm"
 												class="text-decoration-none text-success ">Dashboard </a></li>
 											<li class="breadcrumb-item active" aria-current="page"
@@ -58,109 +59,120 @@
 								</div>
 								<!-- button -->
 								<div>
-									<a href="admin/category/add.htm" class="btn btn-success">Add
-										New Category</a>
+									<a href="admin/category/add.htm" class="btn btn-success">Add New Category</a>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!--End Breadcrum -->
-
-
-					<div class="row  ">
-						<div class="col-xl-12 col-12 mb-5">
-							<div class=" px-6 py-6 p-4">
-								<div class="row justify-content-between">
-									<div class="col-lg-4 col-md-6 col-12 mb-2 mb-md-0">
-										<form class="d-flex" role="search"
-											action="admin/category/searchCategory.htm">
-											<input class="form-control" type="search"
-												placeholder="Search Category" aria-label="Search"
-												name="search">
-										</form>
-									</div>
-									<div class="col-xl-2 col-md-4 col-12">
-										<div class="dropdown">
-											<button class="btn btn-success dropdown-toggle" type="button"
-												data-bs-toggle="dropdown" aria-expanded="false"><c:if test="${filter == 0 }">All</c:if>
-												<c:if test="${filter == 1 }">Unpublished</c:if>
-												<c:if test="${filter == 2 }">Published</c:if></button>
-											<ul class="dropdown-menu">
-												<li><a class="dropdown-item"
-													href="admin/category.htm?filter=0">All</a></li>
-												<li><a class="dropdown-item"
-													href="admin/category.htm?filter=1">Unpublished</a></li>
-												<li><a class="dropdown-item"
-													href="admin/category.htm?filter=2">Published</a></li>
-
-											</ul>
-										</div>
-									</div>
-								</div>
-
-
-							</div>
-						</div>
+					
+					<!-- Bắt đầu một hàng (row) mới -->
+					<div class="row">
+					    <!-- Tạo một cột chiếm toàn bộ chiều rộng màn hình -->
+					    <div class="col-xl-12 col-12 mb-5">
+					        <!-- Một khối chứa với khoảng đệm xung quanh -->
+					        <div class="px-6 py-6 p-4">
+					            <!-- Một hàng mới để chứa các phần tử bên trong -->
+					            <div class="row justify-content-between">
+					                <!-- Cột chứa biểu mẫu tìm kiếm (search form) -->
+					                <div class="col-lg-4 col-md-6 col-12 mb-2 mb-md-0">
+					                    <!-- Biểu mẫu tìm kiếm (search form) -->
+					                    <form class="d-flex" role="search" action="admin/category/searchCategory.htm">
+					                        <!-- Trường nhập liệu để tìm kiếm danh mục -->
+					                        <input class="form-control" type="search" placeholder="Search Category" aria-label="Search" name="search">
+					                    </form>
+					                </div>
+					                <!-- Cột chứa menu thả xuống (dropdown menu) -->
+					                <div class="col-xl-2 col-md-4 col-12">
+					                    <div class="dropdown">
+					                        <!-- Nút mở menu thả xuống, màu nền và viền tùy chỉnh -->
+					                        <button style="background-color: #FD6C9C !important; border-color: #FD6C9C !important;"
+					                                class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+					                            <!-- Hiển thị văn bản nút dựa trên giá trị của biến 'filter' -->
+					                            <c:if test="${filter == 0}">All</c:if>
+					                            <c:if test="${filter == 1}">Unpublished</c:if>
+					                            <c:if test="${filter == 2}">Published</c:if>
+					                        </button>
+					                        <!-- Danh sách các tùy chọn trong menu thả xuống -->
+					                        <ul class="dropdown-menu">
+					                            <li><a class="dropdown-item" href="admin/category.htm?filter=0">All</a></li>
+					                            <li><a class="dropdown-item" href="admin/category.htm?filter=1">Unpublished</a></li>
+					                            <li><a class="dropdown-item" href="admin/category.htm?filter=2">Published</a></li>
+					                        </ul>
+					                    </div>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
 					</div>
+
 
 					<!-- End Search  Filter -->
 					<!-- table -->
-					<div class="table-responsive ">
-						<table class="table ">
-							<thead class="position-sticky top-0 ">
-								<tr class="table-success">
-									<th>Image</th>
-									<th>Category</th>
-									<th>Product Size</th>
-									<th>Update</th>
-									<th>Delete</th>
-									<th>Status</th>
-								</tr>
-							</thead>
-							<tbody>
-
-								<c:forEach varStatus="status" var="item" items="${list}">
-									<tr>
-										<td class="align-middle"><a
-											href="product/index.htm?categoryId=${item.id }"> <img
-												src="assets/img/category/${item.image}"
-												alt="Category
-                                                Name"
-												style="width: 80px"></a></td>
-										<td class="align-middle"><a
-											href="product/index.htm?categoryId=${item.id }"
-											class="text-dark">${item.name}</a></td>
-										<td class="align-middle">${item.products.size()}</td>
-
-										<td class="align-middle"><a
-											href="admin/category/update${item.id}.htm"
-											class="btn btn-warning btn-sm"> Update</a></td>
-										<td class="align-middle"><a type="button"
-											href="admin/category/delete.htm?id=${item.id}"
-											class="btn btn-danger btn-sm ${item.products.size() > 0 ? 'disabled' : '' }">
-												Delete </a></td>
-										<td class="align-middle"><c:if
-												test="${item.products.size() > 0}">
-												<span class="badge bg-success">Published</span>
-											</c:if> <c:if test="${item.products.size() == 0}">
-												<span class="badge bg-danger">Unpublished</span>
-											</c:if></td>
-
-
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
-
-
+					<div class="table-responsive">
+					    <!-- Bảng hiển thị danh sách -->
+					    <table class="table">
+					        <!-- Đầu bảng với tiêu đề được giữ ở vị trí cố định trên cùng -->
+					        <thead class="position-sticky top-0">
+					            <tr class="table-success">
+					                <th style = "background-color: #ffd3ed;">Image</th>
+					                <th style = "background-color: #ffd3ed;">Category</th>
+					                <th style = "background-color: #ffd3ed;">Product Size</th>
+					                <th style = "background-color: #ffd3ed;">Update</th>
+					                <th style = "background-color: #ffd3ed;">Delete</th>
+					                <th style = "background-color: #ffd3ed;">Status</th>
+					            </tr>
+					        </thead>
+					        <tbody>
+					            <!-- Lặp qua từng phần tử trong danh sách -->
+					            <c:forEach varStatus="status" var="item" items="${list}">
+					                <tr>
+					                    <!-- Cột hiển thị hình ảnh -->
+					                    <td class="align-middle"><a href="product/index.htm?categoryId=${item.id }">
+					                            <img src="assets/img/category/${item.image}" alt="Category Name" style="width: 80px">
+					                        </a>
+					                    </td>
+					                    
+					                    <!-- Cột hiển thị tên danh mục -->
+					                    <td class="align-middle">
+					                    	<a href="product/index.htm?categoryId=${item.id }" class="text-dark">${item.name}</a>
+					                    </td>
+					                    
+					                    <!-- Cột hiển thị số lượng sản phẩm thuộc danh mục -->
+					                    <td class="align-middle">
+					                    	${item.products.size()}
+					                    </td>
+					                    
+					                    <!-- Cột chứa nút Update -->
+					                    <td class="align-middle">
+					                    	<a href="admin/category/update${item.id}.htm" class="btn btn-warning btn-sm"> Update</a>
+					                    </td>
+					                    
+					                    <!-- Cột chứa nút Delete -->
+					                    <td class="align-middle">
+					                    	<a style = "background-color: red;" type="button" href="admin/category/delete.htm?id=${item.id}" class="btn btn-danger btn-sm ${item.products.size() > 0 ? 'disabled' : '' }">Delete</a>
+					                    </td>
+					                    
+					                    <!-- Cột hiển thị trạng thái của danh mục -->
+					                    <td class="align-middle">
+					                        <!-- Nếu danh mục có sản phẩm, hiển thị là Published, ngược lại hiển thị Unpublished -->
+					                        <c:if test="${item.products.size() > 0}">
+					                            <span class="badge bg-success">Published</span>
+					                        </c:if>
+					                        <c:if test="${item.products.size() == 0}">
+					                            <span class="badge bg-danger">Unpublished</span>
+					                        </c:if>
+					                    </td>
+					                    
+					                </tr>
+					            </c:forEach>
+					        </tbody>
+					    </table>
 					</div>
 				</div>
-
-
 			</div>
-
+			
 			<div class="d-flex justify-content-center ">
-
 				<!-- nav -->
 				<nav>
 					<ul class="pagination d-flex justify-content-center ms-2">

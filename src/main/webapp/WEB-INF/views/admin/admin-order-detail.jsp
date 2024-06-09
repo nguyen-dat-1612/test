@@ -2,10 +2,10 @@
 
 <body>
 
-
+<!-- admin-order-detail.jsp -->
 
 	<div class="row">
-
+		
 		<!-- Sidebar -->
 		<div class="col-2 d-none d-lg-inline "><%@include
 				file="/WEB-INF/views/admin/admin-header-nav.jsp"%></div>
@@ -27,10 +27,10 @@
 									<!-- breacrumb -->
 									<nav aria-label="breadcrumb">
 										<ol class="breadcrumb mb-0 text-muted fs-6 fw-semibold">
-											<li class="breadcrumb-item  "><a
+											<li class="breadcrumb-item  "><a style ="color:#FD6C9C !important"
 												href="admin/user/dashboard.htm"
 												class="text-decoration-none text-success ">Dashboard </a></li>
-											<li class="breadcrumb-item "><a
+											<li class="breadcrumb-item "><a style ="color:#FD6C9C !important"
 												href="admin/user/get-employee.htm"
 												class="text-decoration-none text-success ">Order </a>
 											<li class="breadcrumb-item active" aria-current="page"
@@ -194,27 +194,14 @@
 													<h6>Payment Info</h6>
 													<span>Cash on Delivery</span>
 												</div>
-
 											</div>
 										</div>
-
-
-
-
 									</div>
-
 								</div>
-
 							</div>
-
 						</div>
-
-
 					</div>
-
-
 				</div>
-
 			</div>
 </body>
 <script type="text/javascript"

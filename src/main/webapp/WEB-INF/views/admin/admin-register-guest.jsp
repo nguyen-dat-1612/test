@@ -11,7 +11,7 @@
 }
 </style>
 <body>
-
+	<!-- admin-register-guest.jsp - Tạo tài khoản khách hàng mới -->
 	<c:choose>
 		<c:when test="${alert == 1}">
 			<div class="position-fixed bottom-0 end-0 p-3">
@@ -64,10 +64,10 @@
 										<!-- breacrumb -->
 										<nav aria-label="breadcrumb">
 											<ol class="breadcrumb mb-0 text-muted fs-6 fw-semibold">
-												<li class="breadcrumb-item  "><a
+												<li class="breadcrumb-item  "><a style ="color:#FD6C9C !important"
 													href="admin/user/dashboard.htm"
 													class="text-decoration-none text-success ">Dashboard </a></li>
-												<li class="breadcrumb-item "><a
+												<li class="breadcrumb-item "><a style ="color:#FD6C9C !important"
 													href="admin/user/get-guest.htm"
 													class="text-decoration-none text-success ">Guest </a>
 												<li class="breadcrumb-item active" aria-current="page"
@@ -81,60 +81,73 @@
 							</div>
 
 							<div class=" col-md-6 offset-md-3 card p-5 ">
-								<form:form action="admin/user/create-guest.htm"
-									modelAttribute="userbean" enctype="multipart/form-data"
-									method="post">
-									<!-- Begin -->
-									<div class="row g-3">
-										<!-- col -->
-										<div class="col">
-											<!-- input -->
-											<form:input type="text" id="firstName"
-												placeholder="First name" class="form-control "
-												path="firstName" />
-											<form:errors class="text-danger" path="firstName" />
-										</div>
-										<div class="col">
-											<form:input type="text" id="lastName" placeholder="Last name"
-												class="form-control " path="lastName" />
-											<form:errors class="text-danger" path="lastName" />
-
-										</div>
-										<div class="col-12">
-
-											<form:input type="email" class="form-control"
-												placeholder="Email" id="email" path="email" />
-											<form:errors class="text-danger" path="email" />
-										</div>
-										<div class="col-12">
-											<div class="password-field position-relative">
-												<form:input type="password" class="form-control"
-													id="password" placeholder="Enter password" path="password" />
-												<span><i onclick="toggleIcon(this)"
-													id="passwordToggler" class="bi bi-eye-slash"></i></span>
-												<form:errors class="text-danger" path="password" />
-											</div>
-										</div>
-										<div class="col-12 ">
-											<form:input type="text" class="form-control" id="phoneNumber"
-												path="phoneNumber" placeholder="Phone Number" />
-											<form:errors class="text-danger" path="phoneNumber" />
-										</div>
-										<div class="col-12 ">
-											<label for="avatar">Avatar:</label>
-											<form:input type="file" class="form-control-file" id="avatar"
-												path="avatar" accept="image/*" />
-											<form:errors class="text-danger" path="avatar" />
-										</div>
-										<!-- btn -->
-										<div class="col-12 d-grid">
-											<button type="submit" class="btn btn-success">Register</button>
-										</div>
-
-
-									</div>
-
-
+								<form:form action="admin/user/create-guest.htm" modelAttribute="userbean" enctype="multipart/form-data" method="post">
+								    <!-- Bắt đầu form -->
+								    <div class="row g-3">
+								        <!-- Một hàng chứa các cột -->
+								        <div class="col">
+								            <!-- Trường nhập liệu cho tên -->
+								            <form:input type="text" id="firstName" placeholder="First name" class="form-control" path="firstName" />
+								            
+								            <!-- Hiển thị các lỗi liên quan đến trường 'firstName' -->
+								            <form:errors class="text-danger" path="firstName" />
+								        </div>
+								        
+								        <div class="col">
+								            <!-- Trường nhập liệu cho họ -->
+								            <form:input type="text" id="lastName" placeholder="Last name" class="form-control" path="lastName" />
+								            
+								            <!-- Hiển thị các lỗi liên quan đến trường 'lastName' -->
+								            <form:errors class="text-danger" path="lastName" />
+								        </div>
+								        
+								        <div class="col-12">
+								            <!-- Trường nhập liệu cho email -->
+								            <form:input type="email" class="form-control" placeholder="Email" id="email" path="email" />
+								            
+								            <!-- Hiển thị các lỗi liên quan đến trường 'email' -->
+								            <form:errors class="text-danger" path="email" />
+								        </div>
+								        
+								        <div class="col-12">
+								            <div class="password-field position-relative">
+								                <!-- Trường nhập liệu cho mật khẩu -->
+								                <form:input type="password" class="form-control" id="password" placeholder="Enter password" path="password" />
+								                
+								                <!-- Biểu tượng để hiển thị hoặc ẩn mật khẩu -->
+								                <span><i onclick="toggleIcon(this)" id="passwordToggler" class="bi bi-eye-slash"></i></span>
+								                
+								                <!-- Hiển thị các lỗi liên quan đến trường 'password' -->
+								                <form:errors class="text-danger" path="password" />
+								            </div>
+								        </div>
+								        
+								        <div class="col-12 ">
+								            <!-- Trường nhập liệu cho số điện thoại -->
+								            <form:input type="text" class="form-control" id="phoneNumber" path="phoneNumber" placeholder="Phone Number" />
+								            
+								            <!-- Hiển thị các lỗi liên quan đến trường 'phoneNumber' -->
+								            <form:errors class="text-danger" path="phoneNumber" />
+								        </div>
+								        
+								        <div class="col-12 ">
+								            <!-- Nhãn cho trường nhập liệu ảnh đại diện -->
+								            <label for="avatar">Avatar:</label>
+								            
+								            <!-- Trường nhập liệu cho ảnh đại diện -->
+								            <form:input type="file" class="form-control-file" id="avatar" path="avatar" accept="image/*" />
+								            
+								            <!-- Hiển thị các lỗi liên quan đến trường 'avatar' -->
+								            <form:errors class="text-danger" path="avatar" />
+								        </div>
+								        
+								        <!-- Nút gửi form -->
+								        <div class="col-12 d-grid">
+								            <button type="submit" class="btn btn-success">Register</button>
+								        </div>
+								        
+								    </div>
+								    <!-- Kết thúc form -->
 								</form:form>
 							</div>
 

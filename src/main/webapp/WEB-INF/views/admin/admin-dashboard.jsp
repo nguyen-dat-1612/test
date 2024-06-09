@@ -1,6 +1,7 @@
 <%@include file="/WEB-INF/views/include/library.jsp"%>
 
 <body>
+	<!-- admin-dashboard.jsp -->
 	<div class="row">
 		<!-- Sidebar -->
 		<div class="col-2 d-none d-lg-inline "><%@include
@@ -22,7 +23,7 @@
 									<!-- breacrumb -->
 									<nav aria-label="breadcrumb">
 										<ol class="breadcrumb mb-0 text-muted fs-6 fw-semibold">
-											<li class="breadcrumb-item  "><a
+											<li class="breadcrumb-item  "><a style ="color:#FD6C9C !important"
 												href="admin/user/dashboard.htm"
 												class="text-decoration-none text-success ">Dashboard </a></li>
 										</ol>
@@ -42,7 +43,6 @@
 								style="background-image: url(assets/img/slide_3.jpg); background-repeat: no-repeat; background-size: cover; background-position: right;">
 								<div class="card-body p-lg-12 p-5">
 									<h1>Welcome back! FootFlower</h1>
-									<a href="#" class="btn btn-success"> Create Product </a>
 								</div>
 							</div>
 						</div>

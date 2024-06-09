@@ -35,7 +35,7 @@
 				<div class="col-9 border-end ">
 					<div class="mb-4 ">
 
-						<div class="fw-bold text-success">
+						<div style = "color: #FD6C9C !important" class="fw-bold text-success">
 							<i class="bi bi-geo-alt-fill"></i> Địa chỉ nhận hàng
 						</div>
 
@@ -90,11 +90,11 @@
 			<table class="table">
 				<thead>
 					<tr class="table-success">
-						<th>Sản phẩm</th>
-						<th>Đơn giá</th>
-						<th>Số lượng</th>
-						<th>Thành tiền</th>
-						<th>Đánh giá</th>
+						<th style = "background-color: #ffd3ed">Sản phẩm</th>
+						<th style = "background-color: #ffd3ed">Đơn giá</th>
+						<th style = "background-color: #ffd3ed">Số lượng</th>
+						<th style = "background-color: #ffd3ed">Thành tiền</th>
+						<th style = "background-color: #ffd3ed">Đánh giá</th>
 					</tr>
 				</thead>
 				<tbody>

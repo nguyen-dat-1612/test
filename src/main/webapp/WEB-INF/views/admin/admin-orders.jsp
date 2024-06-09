@@ -18,6 +18,7 @@
 
 
 <body>
+	<!-- admin-orders.jsp  -->
 	<c:choose>
 		<c:when test="${alert == 1}">
 			<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
@@ -64,7 +65,7 @@
 									<!-- breacrumb -->
 									<nav aria-label="breadcrumb">
 										<ol class="breadcrumb mb-0 text-muted fs-6 fw-semibold">
-											<li class="breadcrumb-item  "><a
+											<li class="breadcrumb-item  "><a style ="color:#FD6C9C !important"
 												href="admin/user/dashboard.htm"
 												class="text-decoration-none text-success ">Dashboard </a></li>
 											<li class="breadcrumb-item active" aria-current="page"
@@ -79,14 +80,13 @@
 					</div>
 					<!--End Breadcrum -->
 
-
 					<div class="row  ">
 						<div class="col-xl-12 col-12 mb-3">
 								<div class="row justify-content-end">
 
 										<div class="col-xl-2 col-md-4 col-12">
 											<div class="dropdown">
-												<button class="btn btn-success dropdown-toggle"
+												<button style ="background-color:#FD6C9C !important; border-color:#FD6C9C !important" class="btn btn-success dropdown-toggle"
 													type="button" data-bs-toggle="dropdown"
 													aria-expanded="false">
 													<c:if test="${filter == 0 }">All</c:if>
@@ -111,71 +111,95 @@
 											</div>
 										</div>
 									</div>
-
-
 						</div>
 
 						<!-- End Search  Filter -->
-						<!-- table -->
+						<!-- Bắt đầu phần chứa bảng -->
 						<div class="table-responsive ">
-							<table class="table ">
-								<thead class="position-sticky top-0 ">
-									<tr class="table-success">
-										<th>Detail</th>
-										<th>Order ID</th>
-										<th>Status</th>
-										<th>Date</th>
-										<th>Amount</th>
-									</tr>
-								</thead>
-								<tbody>
+						    <!-- Bảng hiển thị dữ liệu -->
+						    <table class="table ">
+						        <!-- Phần đầu bảng, luôn cố định ở đầu trang khi cuộn -->
+						        <thead class="position-sticky top-0 ">
+						            <!-- Hàng đầu tiên của bảng, chứa tiêu đề các cột -->
+						            <tr class="table-success">
+						                <th style = "background-color: #ffd3ed">Detail</th> <!-- Cột chi tiết đơn hàng -->
+						                <th style = "background-color: #ffd3ed">Order ID</th> <!-- Cột mã đơn hàng -->
+						                <th style = "background-color: #ffd3ed">Status</th> <!-- Cột trạng thái đơn hàng -->
+						                <th style = "background-color: #ffd3ed">Date</th> <!-- Cột ngày đặt hàng -->
+						                <th style = "background-color: #ffd3ed">Amount</th> <!-- Cột tổng số tiền -->
+						            </tr>
+						        </thead>
+						        <!-- Phần thân bảng -->
+						        <tbody>
+						            <!-- Duyệt qua danh sách đơn hàng 'order' và hiển thị từng đơn hàng -->
+						            <c:forEach varStatus="status" var="item" items="${order}">
+						                <!-- Hàng dữ liệu cho mỗi đơn hàng -->
+						                <tr>
+						                    <!-- Cột chi tiết đơn hàng, liên kết đến trang chi tiết đơn hàng với ID đơn hàng -->
+						                    <td class="align-middle">
+						                        <a href="admin/orders/order-detail.htm?orderId=${item.orderId }">
+						                            <i class="bi bi-info-circle"></i>
+						                        </a>
+						                    </td>
+						                    <!-- Cột mã đơn hàng, hiển thị mã đơn hàng -->
+						                    <td class="align-middle">
+						                        <span style="color: #a8729a;">${item.orderId }</span>
+						                    </td>
+						                    <!-- Cột trạng thái đơn hàng -->
+						                    <td class="align-middle">
+						                        <!-- Dropdown để hiển thị và thay đổi trạng thái đơn hàng -->
+						                        <div class="dropdown">
+						                            <!-- Nút bấm hiển thị trạng thái hiện tại của đơn hàng -->
+						                            <button class="btn btn-sm btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						                                <!-- Hiển thị trạng thái đơn hàng dựa trên giá trị của 'status' -->
+						                                <c:if test="${item.status == 0 }">Unresolved</c:if>
+						                                <c:if test="${item.status == 1 }">On Moving</c:if>
+						                                <c:if test="${item.status == 2 }">Success</c:if>
+						                                <c:if test="${item.status == 3}">Cancel</c:if>
+						                            </button>
+						                            <!-- Menu thả xuống chứa các trạng thái có thể thay đổi -->
+						                            <ul class="dropdown-menu">
+						                                <!-- Tùy chọn để đặt trạng thái đơn hàng là 'Unresolved' -->
+						                                <li>
+						                                    <a class="dropdown-item ${(item.status == 2 or item.status == 1 ) ? 'disabled' : '' }" href="admin/orders/update-order.htm?id=${item.orderId }&status=0">
+						                                        Unresolved
+						                                    </a>
+						                                </li>
+						                                <!-- Tùy chọn để đặt trạng thái đơn hàng là 'On Moving' -->
+						                                <li>
+						                                    <a class="dropdown-item ${item.status == 2 ? 'disabled' : '' }" href="admin/orders/update-order.htm?id=${item.orderId }&status=1">
+						                                        On Moving
+						                                    </a>
+						                                </li>
+						                                <!-- Tùy chọn để đặt trạng thái đơn hàng là 'Success' -->
+						                                <li>
+						                                    <a class="dropdown-item" href="admin/orders/update-order.htm?id=${item.orderId }&status=2">
+						                                        Success
+						                                    </a>
+						                                </li>
+						                                <!-- Tùy chọn để đặt trạng thái đơn hàng là 'Cancel' -->
+						                                <li>
+						                                    <a class="dropdown-item ${item.status == 2 ? 'disabled' : '' }" href="admin/orders/update-order.htm?id=${item.orderId }&status=3">
+						                                        Cancel
+						                                    </a>
+						                                </li>
+						                            </ul>
+						                        </div>
+						                    </td>
+						                    <!-- Cột ngày đặt hàng, định dạng ngày tháng theo 'dd-MM-yyyy' -->
+						                    <td class="align-middle">
+						                        <fmt:formatDate value="${item.orderTime}" pattern="dd-MM-yyyy" />
+						                    </td>
+						                    <!-- Cột tổng số tiền, định dạng theo tiền tệ với ký hiệu 'VND' và không có chữ số thập phân -->
+						                    <td class="align-middle">
+						                        <fmt:formatNumber value="${item.price }" type="currency" currencySymbol="VND" maxFractionDigits="0" />
+						                    </td>
+						                </tr>
+						            </c:forEach> <!-- Kết thúc vòng lặp để duyệt qua các đơn hàng -->
+						        </tbody>
+						    </table>
+						</div> <!-- Kết thúc phần chứa bảng -->
 
-									<c:forEach varStatus="status" var="item" items="${order}">
-										<tr>
-											<td class="align-middle"><a
-												href="admin/orders/order-detail.htm?orderId=${item.orderId }"><i
-													class="bi bi-info-circle"></i></a></td>
-											<td class="align-middle"><span style="color: #a8729a;">${item.orderId }</span></td>
-											<td class="align-middle"><div class="dropdown">
-													<button
-														class="btn btn-sm btn-outline-success dropdown-toggle"
-														type="button" data-bs-toggle="dropdown"
-														aria-expanded="false">
-														<c:if test="${item.status == 0 }">Unresolved</c:if>
-														<c:if test="${item.status == 1 }">On Moving</c:if>
-														<c:if test="${item.status == 2 }">Success</c:if>
-														<c:if test="${item.status == 3}">Cancel</c:if>
-													</button>
-													<ul class="dropdown-menu">
-														<li><a
-															class="dropdown-item ${(item.status == 2 or item.status == 1 ) ? 'disabled' : '' } "
-															href="admin/orders/update-order.htm?id=${item.orderId }&status=0">Unresolved</a></li>
-														<li><a
-															class="dropdown-item ${item.status == 2 ? 'disabled' : '' }"
-															href="admin/orders/update-order.htm?id=${item.orderId }&status=1">On
-																Moving</a></li>
-														<li><a class="dropdown-item"
-															href="admin/orders/update-order.htm?id=${item.orderId }&status=2">Success</a></li>
-														<li><a
-															class="dropdown-item ${item.status == 2 ? 'disabled' : '' }"
-															href="admin/orders/update-order.htm?id=${item.orderId }&status=3">Cancel</a></li>
-
-													</ul>
-												</div></td>
-											<td class="align-middle"><fmt:formatDate
-													value="${item.orderTime}" pattern="dd-MM-yyyy" /></td>
-											<td class="align-middle"><fmt:formatNumber
-													value="${item.price }" type="currency" currencySymbol="VND"
-													maxFractionDigits="0" /></td>
-
-
-										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
-
-
-						</div>
 					</div>
 
 

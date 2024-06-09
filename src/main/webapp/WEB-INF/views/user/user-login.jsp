@@ -16,16 +16,16 @@
 	transform: translateY(-50%);
 }
 
-
 input[type='checkbox']:checked {
-    background-color: #FD6C9C;
+	background-color: #FD6C9C;
 }
+
 .my-5 {
-	    margin-top: 6.9rem !important;
-	    margin-bottom: 6.9rem !important;
+	margin-top: 6.9rem !important;
+	margin-bottom: 6.9rem !important;
 }
 </style>
-	
+
 
 <body>
 	<%@include file="/WEB-INF/views/include/header.jsp"%>
@@ -113,7 +113,8 @@ input[type='checkbox']:checked {
 				<div class="col-12 col-md-6 offset-lg-1 col-lg-4 order-lg-2 order-1">
 					<div class="mb-lg-9 mb-3">
 						<h1 class="mb-1 h2 fw-bold">
-							Sign in to <span class="text-success" style="color:#FD6C9C !important">Foot Flower </span>
+							Sign in to <span class="text-success"
+								style="color: #FD6C9C !important">Foot Flower </span>
 						</h1>
 						<p>Welcome back to Foot Flower! Enter your email to get
 							started.</p>
@@ -143,7 +144,7 @@ input[type='checkbox']:checked {
 								<!-- form check -->
 								<div class="form-check">
 									<form:checkbox class="form-check-input" path="isRemember"
-										id="flexCheckDefault"/>
+										id="flexCheckDefault" />
 									<!-- label -->
 									<label class="form-check-label" for="flexCheckDefault">
 										Remember me </label>
@@ -156,13 +157,16 @@ input[type='checkbox']:checked {
 							<!-- btn -->
 							<div class="col-12 d-grid">
 								<button name="guest-login"
-									class="btn btn-success btn-block  mb-3" type="submit"  style="background-color:#FD6C9C !important; border-color: #FD6C9C !important">Log
+									class="btn btn-success btn-block  mb-3" type="submit"
+									style="background-color: #FD6C9C !important; border-color: #FD6C9C !important">Log
 									in</button>
 							</div>
 							<!-- link -->
 							<div>
 								Do not have an account? <a href="guest/guest-register.htm"
-									class="link-success "  style="color:#FD6C9C !important; text-decoration-color: #FD6C9C;">Create new</a>
+									class="link-success "
+									style="color: #FD6C9C !important; text-decoration-color: #FD6C9C;">Create
+									new</a>
 							</div>
 						</div>
 					</form:form>

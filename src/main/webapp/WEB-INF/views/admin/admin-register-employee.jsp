@@ -11,7 +11,7 @@
 }
 </style>
 <body>
-
+	<!-- admin-register-employee.jsp - Tạo tài khoản nhân viên mới -->
 	<c:choose>
 		<c:when test="${alert == 1}">
 			<div class="position-fixed bottom-0 end-0 p-3">
@@ -39,7 +39,6 @@
 	</c:choose>
 
 	<div class="row">
-
 		<!-- Sidebar -->
 		<div class="col-2 d-none d-lg-inline "><%@include
 				file="/WEB-INF/views/admin/admin-header-nav.jsp"%></div>
@@ -61,10 +60,10 @@
 									<!-- breacrumb -->
 									<nav aria-label="breadcrumb">
 										<ol class="breadcrumb mb-0 text-muted fs-6 fw-semibold">
-											<li class="breadcrumb-item  "><a
+											<li class="breadcrumb-item  "><a style ="color:#FD6C9C !important"
 												href="admin/user/dashboard.htm"
 												class="text-decoration-none text-success ">Dashboard </a></li>
-											<li class="breadcrumb-item "><a
+											<li class="breadcrumb-item "><a style ="color:#FD6C9C !important"
 												href="admin/user/get-employee.htm"
 												class="text-decoration-none text-success ">Employee </a>
 											<li class="breadcrumb-item active" aria-current="page"
@@ -78,60 +77,74 @@
 						</div>
 
 						<div class=" col-md-6 offset-md-3 card p-5 ">
-							<form:form action="admin/user/create-employee.htm"
-								modelAttribute="userbean" enctype="multipart/form-data"
-								method="post">
-								<!-- Begin -->
+							<!-- Form đăng ký tài khoản nhân viên -->
+							<form:form action="admin/user/create-employee.htm" modelAttribute="userbean" enctype="multipart/form-data" method="post">
+								<!-- Bắt đầu phần nội dung của form -->
 								<div class="row g-3">
-									<!-- col -->
+								
+									<!-- Một cột cho trường nhập liệu -->
 									<div class="col">
-										<!-- input -->
-										<form:input type="text" id="firstName"
-											placeholder="First name" class="form-control "
-											path="firstName" />
+									
+										<!-- Trường nhập liệu cho tên -->
+										<form:input type="text" id="firstName" placeholder="First name" class="form-control " path="firstName" />
+										
+										<!-- Hiển thị lỗi nếu có lỗi liên quan đến trường 'firstName' -->
 										<form:errors class="text-danger" path="firstName" />
 									</div>
+									
 									<div class="col">
-										<form:input type="text" id="lastName" placeholder="Last name"
-											class="form-control " path="lastName" />
+										<!-- Trường nhập liệu cho họ -->
+										<form:input type="text" id="lastName" placeholder="Last name" class="form-control " path="lastName" />
+										
+										<!-- Hiển thị lỗi nếu có lỗi liên quan đến trường 'lastName' -->
 										<form:errors class="text-danger" path="lastName" />
-
 									</div>
+									
 									<div class="col-12">
-
-										<form:input type="email" class="form-control"
-											placeholder="Email" id="email" path="email" />
+										<!-- Trường nhập liệu cho email -->
+										<form:input type="email" class="form-control" placeholder="Email" id="email" path="email" />
+										
+										<!-- Hiển thị lỗi nếu có lỗi liên quan đến trường 'email' -->
 										<form:errors class="text-danger" path="email" />
 									</div>
+									
 									<div class="col-12">
 										<div class="password-field position-relative ">
-											<form:input type="password" class="form-control"
-												id="password" placeholder="Enter password" path="password" />
-											<span><i onclick="toggleIcon(this)"
-												id="passwordToggler" class="bi bi-eye-slash"></i></span>
+											<!-- Trường nhập liệu cho mật khẩu -->
+											<form:input type="password" class="form-control" id="password" placeholder="Enter password" path="password" />
+											 
+											 <!-- Icon hiển thị/tắt mật khẩu -->
+											<span>
+												<i onclick="toggleIcon(this)" id="passwordToggler" class="bi bi-eye-slash"> </i>
+											</span>
+											
+											<!-- Hiển thị lỗi nếu có lỗi liên quan đến trường 'password' -->
 											<form:errors class="text-danger" path="password" />
 										</div>
 									</div>
 									<div class="col-12 ">
-										<form:input type="text" class="form-control" id="phoneNumber"
-											path="phoneNumber" placeholder="Phone Number" />
+										<!-- Trường nhập liệu cho số điện thoại -->
+										<form:input type="text" class="form-control" id="phoneNumber" path="phoneNumber" placeholder="Phone Number" />
+										
+										<!-- Hiển thị lỗi nếu có lỗi liên quan đến trường 'phoneNumber' -->
 										<form:errors class="text-danger" path="phoneNumber" />
 									</div>
 									<div class="col-12 ">
+										<!-- Nhãn cho trường nhập liệu ảnh đại diện -->
 										<label for="avatar">Avatar:</label>
-										<form:input type="file" class="form-control-file" id="avatar"
-											path="avatar" accept="image/*" />
+										
+										<!-- Trường nhập liệu cho ảnh đại diện -->
+										<form:input type="file" class="form-control-file" id="avatar" path="avatar" accept="image/*" />
+										
+										<!-- Hiển thị lỗi nếu có lỗi liên quan đến trường 'avatar' -->
 										<form:errors class="text-danger" path="avatar" />
 									</div>
-									<!-- btn -->
+									 <!-- Nút gửi form -->
 									<div class="col-12 d-grid">
 										<button type="submit" class="btn btn-success">Register</button>
 									</div>
-
-
 								</div>
-
-
+							<!-- Kết thúc phần nội dung của form -->
 							</form:form>
 						</div>
 					</div>

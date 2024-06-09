@@ -10,7 +10,7 @@
 						http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 						http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<bean id="poly" class="tad.bean.Company">
+	<bean id="poly" class="ptithcm.bean.Company">
 		<property name="logoNavImg" value="assets/img/logo.png" />
 		<property name="slider1Img" value="assets/img/slide_1.jpg" />
 		<property name="slider2Img" value="assets/img/slide_2.jpg" />
@@ -44,35 +44,35 @@
 
 
 	<!-- CSDL -->
-	<bean id="ProductDAO" class="tad.DAOImpl.ProductDAOImpl">
+	<bean id="ProductDAO" class="ptithcm.DAOImpl.ProductDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="CategoryDAO" class="tad.DAOImpl.CategoryDAOImpl">
+	<bean id="CategoryDAO" class="ptithcm.DAOImpl.CategoryDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="CouponDAO" class="tad.DAOImpl.CouponDAOImpl">
+	<bean id="CouponDAO" class="ptithcm.DAOImpl.CouponDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	<bean id="CartDAO" class="tad.DAOImpl.CartDAOImpl">
-		<property name="sessionFactory" ref="sessionFactory"></property>
-	</bean>
-
-	<bean id="AccountDAO" class="tad.DAOImpl.AccountDAOImpl">
+	<bean id="CartDAO" class="ptithcm.DAOImpl.CartDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 
-	<bean id="AddressDAO" class="tad.DAOImpl.AddressDAOImpl">
+	<bean id="AccountDAO" class="ptithcm.DAOImpl.AccountDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="AddressDAO" class="ptithcm.DAOImpl.AddressDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
-	<bean id="OrderDAO" class="tad.DAOImpl.OrderDAOImpl">
+	<bean id="OrderDAO" class="ptithcm.DAOImpl.OrderDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
-	<bean id="WishlistDAO" class="tad.DAOImpl.WishlistDAOImpl">
+	<bean id="WishlistDAO" class="ptithcm.DAOImpl.WishlistDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="FeedbackDAO" class="tad.DAOImpl.FeedbackDAOImpl">
+	<bean id="FeedbackDAO" class="ptithcm.DAOImpl.FeedbackDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 

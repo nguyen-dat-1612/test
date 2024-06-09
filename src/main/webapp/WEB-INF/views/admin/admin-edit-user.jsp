@@ -11,7 +11,7 @@
 }
 </style>
 <body>
-
+	<!-- admin-edit-user.jsp - Chỉnh sửa thông tin tài khoản -->
 	<c:choose>
 		<c:when test="${alert == 1}">
 			<div class="position-fixed bottom-0 end-0 p-3">
@@ -73,7 +73,7 @@
 									<!-- breacrumb -->
 									<nav aria-label="breadcrumb">
 										<ol class="breadcrumb mb-0 text-muted fs-6 fw-semibold">
-											<li class="breadcrumb-item  "><a
+											<li class="breadcrumb-item  "><a style ="color:#FD6C9C !important
 												href="admin/user/dashboard.htm"
 												class="text-decoration-none text-success ">Dashboard </a></li>
 											<li class="breadcrumb-item active" aria-current="page"
@@ -87,58 +87,57 @@
 						</div>
 
 						<div class=" col-md-6 offset-md-3 card p-5 ">
-							<form:form action="admin/user/edit.htm?id=${id }"
-								modelAttribute="userbean" enctype="multipart/form-data"
-								method="post">
-								<form:input type="hidden" path="password" />
-								<!-- Begin -->
-								<div class="row g-3">
-									<!-- col -->
-									<div class="col">
-										<!-- input -->
-										<form:input type="text" id="lastName" placeholder="Last name"
-											class="form-control " path="lastName" />
-										<form:errors class="text-danger" path="lastName" />
-									</div>
-									<div class="col">
-										<form:input type="text" id="firstName"
-											placeholder="First name" class="form-control "
-											path="firstName" />
-										<form:errors class="text-danger" path="firstName" />
-
-									</div>
-
-									<div class="col-12 ">
-										<form:input type="text" class="form-control" id="email"
-											path="email" placeholder="Email" />
-										<form:errors class="text-danger" path="email" />
-									</div>
-
-
-									<div class="col-12 ">
-										<form:input type="text" class="form-control" id="phoneNumber"
-											path="phoneNumber" placeholder="Phone Number" />
-										<form:errors class="text-danger" path="phoneNumber" />
-									</div>
-									<div class="col-12 ">
-										<img
-											src="<c:url value="/assets/img/account/${userbean.avatarDir} "/>"
-											id="output" class="mt-2 mb-2 rounded-circle" width="100px"
-											height="100px" class="mv-10" />
-										<form:input path="avatar" class="form-control" type="file"
-											accept="image/*" id="formFile" onchange="loadFile(event)" />
-										<form:errors class="text-danger" path="avatar" />
-									</div>
-									<!-- btn -->
-									<div class="col-12 d-grid">
-										<button type="submit" class="btn btn-success">Submit</button>
-									</div>
-
-
-								</div>
-
-
+							<form:form action="admin/user/edit.htm?id=${id }" modelAttribute="userbean" enctype="multipart/form-data" method="post">
+							    <form:input type="hidden" path="password" />
+							    <!-- Bắt đầu form -->
+							    <div class="row g-3">
+							        <!-- Một hàng chứa các cột -->
+							        <div class="col">
+							            <!-- Trường nhập liệu cho họ -->
+							            <form:input type="text" id="lastName" placeholder="Last name" class="form-control" path="lastName" />
+							            
+							            <!-- Hiển thị các lỗi liên quan đến trường 'lastName' -->
+							            <form:errors class="text-danger" path="lastName" />
+							        </div>
+							        <div class="col">
+							            <!-- Trường nhập liệu cho tên -->
+							            <form:input type="text" id="firstName" placeholder="First name" class="form-control" path="firstName" />
+							            
+							            <!-- Hiển thị các lỗi liên quan đến trường 'firstName' -->
+							            <form:errors class="text-danger" path="firstName" />
+							        </div>
+							        <div class="col-12 ">
+							            <!-- Trường nhập liệu cho email -->
+							            <form:input type="text" class="form-control" id="email" path="email" placeholder="Email" />
+							            
+							            <!-- Hiển thị các lỗi liên quan đến trường 'email' -->
+							            <form:errors class="text-danger" path="email" />
+							        </div>
+							        <div class="col-12 ">
+							            <!-- Trường nhập liệu cho số điện thoại -->
+							            <form:input type="text" class="form-control" id="phoneNumber" path="phoneNumber" placeholder="Phone Number" />
+							            
+							            <!-- Hiển thị các lỗi liên quan đến trường 'phoneNumber' -->
+							            <form:errors class="text-danger" path="phoneNumber" />
+							        </div>
+							        <div class="col-12 ">
+							            <!-- Hiển thị ảnh đại diện hiện tại -->
+							            <img src="<c:url value="/assets/img/account/${userbean.avatarDir} "/>" id="output" class="mt-2 mb-2 rounded-circle" width="100px" height="100px" class="mv-10" />
+							            
+							            <!-- Trường nhập liệu cho ảnh đại diện mới -->
+							            <form:input path="avatar" class="form-control" type="file" accept="image/*" id="formFile" onchange="loadFile(event)" />
+							            
+							            <!-- Hiển thị các lỗi liên quan đến trường 'avatar' -->
+							            <form:errors class="text-danger" path="avatar" />
+							        </div>
+							        <!-- Nút gửi form -->
+							        <div class="col-12 d-grid">
+							            <button type="submit" class="btn btn-success">Submit</button>
+							        </div>
+							    </div>
+							    <!-- Kết thúc form -->
 							</form:form>
+
 						</div>
 					</div>
 				</div>

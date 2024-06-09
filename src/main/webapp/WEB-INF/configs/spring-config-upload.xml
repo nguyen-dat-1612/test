@@ -17,19 +17,19 @@
 	</bean>
 
 	<!-- Thay doi theo cau hình moi may -->
-	<bean id="accountImgDir" class="tad.bean.UploadFile">
+	<bean id="accountImgDir" class="ptithcm.bean.UploadFile">
 		<property name="path"
-			value="D:\Student\Junior2\Web\FlowerShop\FlowerShop\src\main\webapp\assets\img\account"></property>
+			value="D:\\Student\\Junior2\\Web\\FlowerShop\\FlowerShop\\src\\main\\webapp\\assets\\img\\account"></property>
 	</bean>
 	<!-- Thay doi theo cau hình moi may -->
-	<bean id="categoryImgDir" class="tad.bean.UploadFile">
+	<bean id="categoryImgDir" class="ptithcm.bean.UploadFile">
 		<property name="path"
-			value="D:\Student\Junior2\Web\FlowerShop\FlowerShop\src\main\webapp\assets\img\category"></property>
+			value="D:\\Student\\Junior2\\Web\\FlowerShop\\FlowerShop\\src\\main\\webapp\\assets\\img\\category"></property>
 	</bean>
 	<!-- Thay doi theo cau hình moi may -->
-	<bean id="productImgDir" class="tad.bean.UploadFile">
+	<bean id="productImgDir" class="ptithcm.bean.UploadFile">
 		<property name="path"
-			value="D:\Student\Junior2\Web\FlowerShop\FlowerShop\src\main\webapp\assets\img\products"></property>
+			value="D:\\Student\\Junior2\\Web\\FlowerShop\\FlowerShop\\src\\main\\webapp\\assets\\img\\products"></property>
 	</bean>
 	
 
